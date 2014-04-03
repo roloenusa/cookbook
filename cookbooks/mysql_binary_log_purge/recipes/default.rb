@@ -5,14 +5,10 @@
 #
 # Cookbook Name:: mysql_binary_log_purge
 # Recipe:: default
-#
-
-# installation path for monitoring tool
-install_path = '/data/monitoring'
 
 if node[:instance_role].include?('db_slave')
   
-  template "/etc/conf.d/memcached" do
+  template "/etc/engineyard/binlogpurge.yml" do
     owner 'root'
     group 'root'
     mode 0644
